@@ -1,0 +1,478 @@
+:root {
+    scroll-behavior: smooth;
+    --dark-blue: #19283f;
+    --light-blue: #a8b9c0;
+    --light-green: #0d727b;
+    --pink: #ff3150;
+    --yellow: #ffbb06;
+    --yellow-bg: #ffc400;
+    --lighter-green: #00c6bf;
+    --alpha-green: #deeef4;
+}
+@supports (scrollbar-color: var(--pink) var(--light-blue)) {
+    * {
+        scrollbar-color: var(--pink) var(--light-blue);
+    }
+}
+::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--light-blue);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient( var(--pink), var(--dark-blue));
+    height: 9rem;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* start header */
+.navbar {
+    background-color: var(--dark-blue);
+}
+.navbar .nav-link {
+    color: var(--light-blue);
+    cursor: pointer;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover,
+.navbar .nav-link.focus {
+    color: var(--light-green);
+}
+.navbar li.nav-item:last-of-type {
+    border-color: var(--light-green) !important;
+}
+.nav-item .search-icon, .nav-item .incorrect {
+    z-index: 5;
+}
+.nav-item .incorrect {
+    display: none;
+}
+.navbar-nav input[type = "text"] {
+    outline: none;
+    width: 0px;
+    color: var(--alpha-green);
+    border-color: var(--light-green) !important;
+    display: none;
+    z-index: 2;
+}
+.navbar-nav input[type = "text"].active {
+    animation: stretch linear 0.5s forwards;
+}
+.navbar-nav input[type = "text"]::placeholder {
+    color: var(--lighter-green);
+}
+@keyframes stretch {
+    from {
+        width: 0;
+        right: 0;
+    }
+    to {
+        width: 490px;
+        right: 0;
+    }
+}
+.navbar button[type="submit"] {
+    color: var(--yellow);
+    background-color: var(--pink);
+    width: 88px;
+    height: 36px;
+}
+.navbar button[type="submit"]:hover,
+.navbar button[type="submit"]:focus {
+    color: var(--light-blue);
+}
+.navbar button[type="submit"]::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    transform: rotateY(90deg);
+    background-color: var(--light-green);
+    width: 88px;
+    height: 40px;
+    transition: transform .2s linear;
+    transform-origin: center center;
+}
+.navbar button[type="submit"]:hover::before,
+.navbar button[type="submit"]:focus::before {
+    transform: rotateY(0);
+}
+/* end header */
+/* start landing */
+.landing, .project {
+    background-color: var(--dark-blue);
+}
+.landing {
+    height: calc(100vh - 54px);
+}
+.landing h2, .global-title h2, .project h2, .team h2 {
+    letter-spacing: 1px;
+}
+.landing p, .global-title p, .work ul li, .about p, .about .card p, .team .container p, .team .card blockquote, .project p, .foot div p, .foot ul, .foot a, form input + div + p {
+    font-size: 13px;
+}
+.main-btn {
+    background-color: var(--pink);
+    color: var(--yellow);
+    transition: 0.5s;
+}
+.main-btn:hover,
+.main-btn:focus {
+    color: var(--light-blue);
+    background-color: var(--light-green);
+}
+.double-angles {
+    bottom: 100px;
+    cursor: pointer;
+    animation: up-down 0.5s linear 2s infinite alternate backwards;
+    color: var(--light-blue);
+}
+@keyframes up-down {
+    to {
+        transform: translateY(10px);
+    }
+}
+/* end landing */
+/* start stuff */
+.global-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 1.5px;
+    background-color: var(--lighter-green);
+    opacity: 0.6;
+}
+article > div {
+    height: 160px;
+    padding-top: 20px;
+}
+article > div span {
+    font-size: 180px;
+    bottom: -75px;
+    transform: translateX(-50%);
+    color: var(--alpha-green);
+}
+article > div i {
+    font-size: 50px;
+    color: var(--lighter-green);
+    bottom: 0;
+    transform: translateX(-50%);
+}
+article h5 {
+    color: var(--yellow);
+}
+/* end stuff */
+/* start work */
+.work, .team {
+    background-image: linear-gradient(var(--alpha-green), #eff7fa);
+}
+.work ul li {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.work ul li.active {
+    background-color: var(--pink);
+    color: var(--yellow);
+}
+.work ul li.active, .work ul li:hover, .work ul li:focus {
+    box-shadow: 1px 1px 5px var(--light-blue);
+}
+.work-gallery div::after {
+    content: "Awesome";
+    position: absolute;
+    color: var(--dark-blue);
+    font-size: 25px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -110px);
+    transition: transform 0.5s;
+}
+.work-gallery div img {
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+}
+.work-gallery div img:hover {
+    filter: grayscale(0%);
+}
+.work-gallery div:hover::after {
+    transform: translate(-50%, -50%);
+}
+img.filter {
+    filter: grayscale(0%) !important;
+}
+.change-pseudo::after {
+    display: none;
+}
+/* end work */
+/* start team */
+.team .container h2 {
+    color: var(--yellow);
+}
+.team .card .card-title {
+    background-color: var(--lighter-green);
+}
+.team .card .card-body {
+    height: 155px;
+}
+.team .row > div {
+    transition: transform 0.5s;
+}
+.team .row > div.active:hover {
+    transform: scale(1.2, 1.2);
+    z-index: 10;
+}
+.team .row > div.invert img {
+    filter: invert(10%);
+}
+.team .row > div.invert:hover img {
+    filter: invert(0);
+}
+/* end team */
+/* start blog */
+.blog .card img.active {
+    filter: blur(1px);
+}
+.blog .card:hover img.active {
+    filter: blur(0);
+}
+.blog .card p {
+    font-size: 12px;
+}
+/* end blog */
+/* start contact */
+.contact {
+    background-color: var(--yellow-bg);
+    color: var(--dark-blue);
+}
+.contact input[type="text"] {
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    padding-bottom: 1px;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.contact input[type="text"]::placeholder {
+    color: #fff;
+    font-size: 14px;
+}
+.contact .btn-parent .btn {
+    background-color: var(--dark-blue);
+}
+.contact .btn-parent .btn:hover {
+    background-color: var(--light-green);
+}
+form input + div + p {
+    bottom: -40px;
+}
+form input + div {
+    width: fit-content !important;
+}
+form input + div .exclamation, form input + div .correct {
+    display: none;
+}
+/* end contact */
+/* start footer */
+.foot {
+    background-color: var(--dark-blue);
+}
+.foot .text > p span {
+    color: #01bfb9;
+}
+.foot .text p span.bondi {
+    color: #ffc501;
+}
+.foot ul li {
+    cursor: pointer;
+}
+.foot ul li.active, .foot ul li:hover, .foot ul li:focus {
+    color: #01bfb9;
+}
+.foot .brands a i {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 2.22;
+    font-size: initial;
+}
+.foot .brands .facebook i {
+    background-color: #1877f2;
+}
+.foot .brands .twitter i {
+    background-color: #1da1f2;
+}
+.foot .brands .google-plus i {
+    background-color: #dd4b39;
+}
+.foot .brands .youtube i {
+    background-color: #ff0000;
+}
+.foot .brands a i:hover {
+    color: initial;
+}
+/* typewriting effect */
+.foot .text > p:first-child span {
+    border-right: 1px solid rgb(213, 255, 252);
+    padding-right: 1px;
+    animation: blink 0.5s linear infinite both;
+}
+@keyframes blink {
+    from {
+        border-color: rgb(213, 255, 252);
+    }
+    to {
+        border-color: rgba(213, 255, 252, 0);
+    }
+}
+/* end footer */
+/* start animation to top */
+/* article animation */
+article:nth-last-of-type(2).animate-top {
+    animation-delay: 0.4s;
+}
+article:last-of-type.animate-top {
+    animation-delay: 0.7s;
+}
+.animate-top {
+    animation: animate-top 0.5s linear forwards;
+}
+@keyframes animate-top {
+    to {
+        transform: translateY(0);
+    }
+}
+/* article animation */
+/* gallery animation */
+.work-gallery {
+    perspective: 700px;
+}
+.work-gallery .animate-rotate {
+    animation: rotate-box 0.5s linear forwards;
+    transform-style: preserve-3d;
+    transform-origin: left center ;
+    backface-visibility: hidden;
+}
+.work-gallery div:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+.work-gallery div:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+.work-gallery div:nth-of-type(4) {
+    animation-delay: 0.6s;
+}
+.work-gallery div:nth-of-type(5) {
+    animation-delay: 0.8s;
+}
+.work-gallery div:nth-of-type(6) {
+    animation-delay: 1s;
+}
+.work-gallery div:nth-of-type(7) {
+    animation-delay: 1.2s;
+}
+.work-gallery div:last-of-type {
+    animation-delay: 1.4s;
+}
+@keyframes rotate-box {
+    from {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0);
+    }
+}
+/* gallery animation */
+/* team animation */
+.point {
+    opacity: 0;
+}
+.animate-point {
+    animation: animate-point 0.5s linear forwards;
+}
+.animate-point:nth-of-type(2) {
+    animation-delay: 1s;
+}
+.animate-point:nth-of-type(3) {
+    animation-delay: 1.8s;
+}
+.team .animate-point:last-of-type {
+    animation-delay: 2.6s;
+}
+@keyframes animate-point {
+    to {
+        opacity: 1;
+    }
+}
+/* team animation */
+/* edit last animation for mobile screen */
+.translate-one {
+    transform: translateX(-800px);
+}
+.translate-two {
+    transform: translateX(800px);
+}
+.translate-three {
+    transform: translateY(200px);
+}
+.animate-translate {
+    animation: animate-translate 1s linear forwards;
+}
+.team .cards:nth-of-type(2), .blog .date-card:nth-of-type(2) {
+    animation-delay: 0.5s;
+}
+.team .cards:nth-of-type(3), .blog .date-card:nth-of-type(3) {
+    animation-delay: 1s;
+}
+.team .cards:last-of-type {
+    animation-delay: 1.5s;
+}
+@keyframes animate-translate {
+    to {
+        transform: translateX(0);
+    }
+}
+/* edit last animation for mobile screen */
+/* end animation to top */
+/* start up */
+.up {
+    width: 40px;
+    height: 40px;
+    background-color: var(--pink);
+    z-index: 9999;
+    bottom: 35px;
+    right: 5%;
+}
+.up i {
+    color: var(--yellow);
+}
+.up:hover, .up:focus {
+    background-color: var(--light-green);
+}
+.up:hover i, .up:focus i {
+    color: var(--alpha-green);
+}
+/* end up */
+
+/* start loading */
+.loading {
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    color: var(--lighter-green);
+    background-color: var(--dark-blue);
+}
+.loading .spinner-border {
+    width: 7rem;
+    height: 7rem;
+}
+/* end loading */
+
