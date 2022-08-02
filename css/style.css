@@ -9,7 +9,7 @@
     --lighter-green: #00c6bf;
     --alpha-green: #deeef4;
 }
-@supports (scrollbar-color: var(--pink) var(--light-blue)) {
+/* @supports (scrollbar-color: var(--pink) var(--light-blue)) {
     * {
         scrollbar-color: var(--pink) var(--light-blue);
     }
@@ -23,9 +23,10 @@
 ::-webkit-scrollbar-thumb {
     background: linear-gradient( var(--pink), var(--dark-blue));
     height: 9rem;
-}
+} */
 body {
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 /* start header */
 .navbar {
