@@ -461,9 +461,13 @@ let randomNum;
 
 
 (function changeWidth () {
-    addEventListener('resize', function () {
-        window.location.reload(true);
-    });
+    if (body.offsetWidth > 992) {
+        addEventListener('resize', function () {
+            window.location.reload(true);
+        });
+    } else {
+        return
+    }
 })();
 
 
