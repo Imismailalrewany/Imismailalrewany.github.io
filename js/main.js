@@ -461,13 +461,15 @@ let randomNum;
 
 
 (function changeWidth () {
-    if (body.offsetWidth > 992) {
-        addEventListener('resize', function () {
-            window.location.reload(true);
-        });
-    } else {
-        return
-    }
+    window.setInterval(() => {
+        if (body.offsetWidth > 992) {
+            addEventListener('resize', function () {
+                window.location.reload(true);
+            });
+        } else {
+            return
+        }
+    });
 })();
 
 
