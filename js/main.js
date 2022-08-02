@@ -585,3 +585,15 @@ let randomNum;
     });
 })();
 
+
+{
+    const getSizes = () => {
+        body.width = window.innerWidth;
+        body.height = window.innerHeight;
+    }
+    getSizes();
+
+    window.addEventListener('resize', getSizes, false);
+}
+
+
