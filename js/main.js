@@ -581,7 +581,7 @@ let randomNum;
         window.setTimeout(() => {
             hidden.classList.remove('d-none');
             loading.classList.add('d-none');
-        }, 3500);
+        }, 2500);
     });
 })();
 
