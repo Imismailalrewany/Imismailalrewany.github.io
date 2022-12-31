@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="body">
+<body>
     <!-- start loading -->
     <div class="loading d-flex justify-content-center align-items-center position-absolute">
         <div class="spinner-border position-absolute" role="status">
@@ -21,7 +21,7 @@
         </div>    
     </div>
     <!-- end loading -->
-    <div class="d-none">
+    <main class="d-none">
         <!-- start header -->
         <header class="sticky-top">
             <nav class="navbar navbar-expand-lg">
@@ -33,27 +33,27 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 position-relative overflow-hidden">
                         <li class="nav-item nav-control">
-                        <a id="home" class="nav-link px-3 pt-3 pt-lg-2 active" aria-current="page">Home</a>
+                            <a id="home" class="nav-link px-3 pt-3 pt-lg-2 active" aria-current="page" data-position=".landing">Home</a>
                         </li>
                         <li class="nav-item nav-control">
-                        <a id="services" class="nav-link px-3" aria-current="page">Services</a>
+                            <a id="services" class="nav-link px-3" aria-current="page" data-position=".stuff">Services</a>
                         </li>
                         <li class="nav-item nav-control">
-                        <a id="portfolio" class="nav-link px-3" aria-current="page">Portfolio</a>
+                            <a id="portfolio" class="nav-link px-3" aria-current="page" data-position=".work">Portfolio</a>
                         </li>
                         <li class="nav-item nav-control">
-                        <a id="about" class="nav-link px-3" aria-current="page">About</a>
+                            <a id="about" class="nav-link px-3" aria-current="page" data-position=".about">About</a>
                         </li>
                         <li class="nav-item nav-control">
-                        <a id="contact" class="nav-link px-3" aria-current="page">Contact</a>
+                            <a id="contact" class="nav-link px-3" aria-current="page" data-position=".contact">Contact</a>
                         </li>
-                        <li class="nav-item border-start ms-3 d-none d-lg-block">
+                        <li id="search-button" class="nav-item border-start ms-3 d-none d-lg-block">
                             <i class="fa-solid fa-magnifying-glass nav-link px-3 fs-4 focus search-icon position-relative"></i>
                             <i class="fa-solid fa-xmark nav-link px-3 fs-4 focus search-icon incorrect position-relative"></i>
-                            <input id="serach" class="shadow-none border-0 border-bottom bg-transparent position-absolute top-0 h-100" type="text" placeholder="Search">
+                            <input id="serach" class="shadow-none border-0 bg-transparent border-bottom position-absolute top-0 h-100" type="text" placeholder="Search">
                         </li>
                     </ul>
-                    <button class="btn rounded-3 main-btn px-4 ms-3 shadow-none position-relative overflow-hidden border-0  mb-3 mb-lg-0" type="submit"><span class="position-absolute top-50 translate-middle">Login</span></button>
+                    <button class="btn rounded main-btn px-4 ms-3 shadow-none position-relative overflow-hidden border-0  mb-3 mb-lg-0" type="submit">Login</button>
                     </div>
                 </div>
             </nav>
@@ -61,7 +61,7 @@
         <div class="landing text-light d-flex justify-content-center align-items-center flex-column py-5 position-relative">
             <h2 class="fw-normal text-capitalize mt-5 mb-2">taste the creativity</h2>
             <p class="text-white-50 mb-4">We make awesome graphic and web design</p>
-            <a href="#" class="btn rounded-pill main-btn px-4 mb-5 shadow-none">Get Started</a>
+            <a href="#" class="btn rounded main-btn px-4 mb-5 shadow-none">Get Started</a>
             <i class="fa-solid fa-angles-down double-angles position-absolute"></i>
         </div>
         <!-- end header -->
@@ -115,7 +115,7 @@
                     <li id="photography" class="me-1 rounded-3" data-cat="photo">Photography</li>
                     <li id="apps" class="me-1 rounded-3" data-cat="apps">Apps</li>
                 </ul>
-                <div class="work-gallery row mt-4">
+                <div class="work-gallery row mt-4 justify-content-center">
                     <div class="all design col-6 col-md-4 col-lg-3 px-3 my-3 position-relative overflow-hidden">
                         <img class="img-fluid" src="imgs/work-01.jpg" alt="work">
                     </div>
@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="#" class="btn rounded-pill main-btn shadow-none px-4 text-capitalize">I want more...</a>
+                    <a href="#" class="btn rounded main-btn shadow-none px-4 text-capitalize">I want more...</a>
                 </div>
             </div>
         </section>
@@ -165,12 +165,12 @@
                             <p class="card-text text-black-50 text-md-start text-center">Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
                             <p class="card-text text-black-50 text-md-start text-center">Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>
                             <div class="text-center mt-3 mt-lg-4 text-md-start mb-md-0 mb-4">
-                                <a href="#" class="btn rounded-pill main-btn shadow-none px-4 text-capitalize">order me one</a>
+                                <a href="#" class="btn rounded main-btn shadow-none px-4 text-capitalize">order me one</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 position-relative">
-                        <img class="position-absolute bottom-0 img-fluid" src="imgs/laptop.png" class="img-fluid rounded-start" alt="...">
+                    <div class="laptop-parent col-md-8 position-lg-relative align-self-end">
+                        <img class="laptop-img position-lg-absolute bottom-0 img-fluid" src="imgs/laptop.png" class="img-fluid rounded-start" alt="...">
                     </div>
                 </div>
             </div>
@@ -251,7 +251,7 @@
         <section class="project text-center py-5 text-light">
             <h2 class="fw-normal mb-2 text-capitalize mt-5">start your project</h2>
             <p class="mb-4 text-white-50">Leave your description and we start the engine.Don't worry,you can cancel anytime</p>
-            <a href="#" class="btn rounded-pill main-btn shadow-none px-4 text-capitalize mb-5">start project</a>
+            <a href="#" class="btn rounded main-btn shadow-none px-4 text-capitalize mb-5">start project</a>
         </section>
         <!-- end project -->
         <!-- start blog -->
@@ -284,7 +284,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn rounded-pill main-btn shadow-none px-4 text-capitalize mt-5">more stories</a>
+            <a href="#" class="btn rounded main-btn shadow-none px-4 text-capitalize mt-5">more stories</a>
         </section>
         <!-- end blog -->
         <!-- start contact -->
@@ -299,7 +299,7 @@
                     </div>
                     <p class="position-absolute text-center text-light"></p>
                     <div class="btn-parent col-3 col-lg-2 m-auto mt-5 mt-lg-0 text-end">
-                        <a href="#" class="btn rounded-pill main-btn shadow-none px-4 text-capitalize">Subscribe</a>
+                        <a href="#" class="btn rounded main-btn shadow-none px-4 text-capitalize">Subscribe</a>
                     </div>
                 </form>
             </div>
@@ -341,7 +341,7 @@
                     <div class="foot-brand col-6 col-md-4 col-lg-4 p-3 text-center text-md-start">
                         <h6 class="text-capitalize text-light mb-3">contact us</h6>
                         <p>Get in touch with us via mail phone.We are waiting for your call or message</p>
-                        <a href="#" class="btn rounded-pill main-btn shadow-none w-100 py-2 mt-3 mt-md-4 overflow-hidden">graphberry@gmail.com</a>
+                        <a href="#" class="btn rounded main-btn shadow-none w-100 py-2 mt-3 mt-md-4 overflow-hidden">graphberry@gmail.com</a>
                         <div class="brands d-flex gap-1 gap-lg-3 mt-4">
                             <a class="facebook text-white" href="#"><i class="fa-brands fa-facebook-f text-center"></i></a>
                             <a class="twitter text-white" href="#"><i class="fa-brands fa-twitter text-center"></i></a>
@@ -356,7 +356,7 @@
         <!-- start go to up button -->
         <a class="up position-fixed rounded-3 d-flex justify-content-center align-items-center text-decoration-none invisible" href="#"><i class="fa-solid fa-angle-up fs-2"></i></a>
         <!-- end go to up button -->
-    </div>
+    </main>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -79,26 +79,12 @@ body {
     background-color: var(--pink);
     width: 88px;
     height: 36px;
+    transition: 0.5s;
 }
 .navbar button[type="submit"]:hover,
 .navbar button[type="submit"]:focus {
     color: var(--light-blue);
-}
-.navbar button[type="submit"]::before {
-    content: "";
-    position: absolute;
-    top: -3px;
-    left: 0;
-    transform: rotateY(90deg);
     background-color: var(--light-green);
-    width: 88px;
-    height: 40px;
-    transition: transform .2s linear;
-    transform-origin: center center;
-}
-.navbar button[type="submit"]:hover::before,
-.navbar button[type="submit"]:focus::before {
-    transform: rotateY(0);
 }
 /* end header */
 /* start landing */
@@ -332,6 +318,19 @@ form input + div .exclamation, form input + div .correct {
         border-color: rgba(213, 255, 252, 0);
     }
 }
+@media (max-width: 992px) {
+    footer.foot {
+        position: relative;
+        padding-bottom: 80px !important;
+    }
+    footer #foot-container #brand .text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
 /* end footer */
 /* start animation to top */
 /* article animation */
@@ -448,7 +447,7 @@ article:last-of-type.animate-top {
     background-color: var(--pink);
     z-index: 9999;
     bottom: 35px;
-    right: 7%;
+    right: 10px;
 }
 .up i {
     color: var(--yellow);
@@ -460,7 +459,6 @@ article:last-of-type.animate-top {
     color: var(--alpha-green);
 }
 /* end up */
-
 /* start loading */
 .loading {
     width: 100%;
